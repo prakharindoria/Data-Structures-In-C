@@ -1,2 +1,2 @@
 # DataStructuresInC
- Data Structures Implementations in C Language.
+ Data Structure Implementations in C Language.
