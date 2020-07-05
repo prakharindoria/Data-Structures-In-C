@@ -1,3 +1,6 @@
+//SingleyLinkedList implementation form Scratch 
+//Prakhar Indoria
+
 #include <conio.h>
 #include <stdio.h>
 struct node{
@@ -5,19 +8,19 @@ int data;
 struct node *next;
 };
 
-void append(struct node**,int);
-int display(struct node*);
-int countnodes(struct node*);
-int search(struct node*,int);
-void del_last(struct node **);
-void del_node(struct node **,int);
-
+void append(struct node**,int); //Method to add new element in LL.
+int display(struct node*);  //Method to show all elements of LL.
+int countnodes(struct node*);   //Count No. Of Nodes.
+int search(struct node*,int);   //Search a specific element.
+void del_last(struct node **);  //Delete from last of LL
+void del_node(struct node **,int);  //Delete any element of LL
+ 
 void main(){
 struct node * start=NULL;
 int noOfNodes;
-char c;
-int x;
-int ts,sr,toDelete;
+char c; // c stands for Choice, To take user input weather user wants to continue entering elements in LL
+int x;  // Element
+int ts,sr,toDelete; //ts represents toSearch, sr represents searchResult , toDelete is the element to Delete from the LL
 do{
 printf("Do you want to enter in Linked List:");
 scanf(" %c",&c);
