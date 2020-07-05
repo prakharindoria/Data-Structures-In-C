@@ -10,13 +10,14 @@ int display(struct node*);
 int countnodes(struct node*);
 int search(struct node*,int);
 void del_last(struct node **);
+void del_node(struct node **,int);
 
 void main(){
 struct node * start=NULL;
 int noOfNodes;
 char c;
 int x;
-int ts,sr;
+int ts,sr,toDelete;
 do{
 printf("Do you want to enter in Linked List:");
 scanf(" %c",&c);
@@ -39,6 +40,15 @@ printf("Your Number is at Position : %d",sr);
 del_last(&start);
 printf("\nDeleting The Last Node,New List Is: ");
 display(start);
+
+printf("\nEnter node to delete: ");
+scanf("%d",&toDelete);
+del_node(&start,toDelete);
+printf("\nDeleting %d Now New List Is: ",toDelete);
+display(start);
+
+
+
 getch();
 }
 
@@ -131,5 +141,44 @@ while(p!=NULL){
     p=p->next;
 }
 return res;
+
+}
+
+
+
+
+void del_node(struct node **ps,int x )
+{
+    struct node *temp,*prev;
+    if(*ps==NULL){
+        printf("List Empty");return;
+    }
+    temp=*ps;
+    if((*ps)->data==x){
+        free(ps);
+        printf("Node at found at first position and deleted");
+        return;
+    }
+
+    while(temp!=NULL && temp->data!=x){
+       prev=temp;
+       temp=temp->next;
+
+    }
+    if(temp==NULL){
+        printf("Node Not Found");
+    }
+    else{
+        prev->next=temp->next;
+        free(temp);
+        printf("Node Deleted");
+    }
+
+
+
+
+
+
+
 
 }
