@@ -12,11 +12,15 @@ void display(struct cnode *);
 void main()
 {
     struct cnode *start=NULL;
+    printf("Circular Linked List :");
     append(&start,10);
     append(&start,20);
     append(&start,30);
     append(&start,40);
     append(&start,50);
+    display(start);
+    del_first(&start);
+    printf("\nAfter deletion first node. CLL is : ");
     display(start);
 }
 
@@ -52,4 +56,33 @@ do{
     printf("\n%d",temp->data);
     temp=temp->next;
 }while(temp!=p);
+}
+
+
+void del_first(struct cnode **ps){
+struct cnode *temp;
+if((*ps)==NULL){
+    printf("List is empty");
+    return;
+}
+if((*ps)->next==(*ps)){
+    free(*ps);
+    *ps=NULL;
+    return;
+
+
+}
+else
+{
+    temp=*ps;
+    while(temp->next!=*ps){
+        temp=temp->next;
+
+    }
+    temp->next=(*ps)->next;
+    free(*ps);
+    *ps=temp->next;
+}
+
+
 }
