@@ -11,13 +11,18 @@ void display(struct cnode *);
 
 void main()
 {
-    struct cnode *start=NULL;
+    struct cnode *start=NULL;int choice;
     printf("Circular Linked List : ");
     append(&start,10);
     append(&start,20);
     append(&start,30);
     append(&start,40);
     append(&start,50);
+    append(&start,60);
+    append(&start,70);
+    append(&start,80);
+    append(&start,90);
+    append(&start,100);
     display(start);
     del_first(&start);
     printf("\n\nAfter deletion first node : ");
@@ -25,7 +30,14 @@ void main()
     del_last(&start);
     printf("\n\nAfter deletion last node : ");
     display(start);
+    printf("\n\nDelete the element of your choice: ");
+    scanf("%d",&choice);
+    del_any(&start,choice);
+    printf("\n\nAfter deletion %d node : ",choice);
+    display(start);
+
     getch();
+
 }
 
 
@@ -121,3 +133,28 @@ else
 
 }
 
+void del_any(struct cnode **ps,int x){//ps pointer to start
+struct cnode *temp,*prev;
+if((*ps)==NULL){
+    printf("List is empty");
+    return;
+}
+temp=*ps;
+ if((*ps)->data==x){
+        *ps=(*ps)->next;
+            free(temp);printf("Node Deleted");
+        return;
+
+    }
+    while(temp->next!=NULL && temp->data!=x)
+    {prev=temp;
+   temp=temp->next;
+    }
+    if(temp->data==x){
+        prev->next=temp->next;
+        free(temp);
+        printf("Node Deleted");
+    }
+    else printf("Node not found");
+
+}
