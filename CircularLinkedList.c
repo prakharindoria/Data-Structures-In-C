@@ -46,12 +46,7 @@ struct cnode *p,*temp;
 p=(struct cnode *)malloc(sizeof(struct cnode));
 p->data=x;
 
-if(*ps==NULL)
-{
-    *ps=p;
-    p->next=p;
-    return;
-}
+
 temp=*ps;
 while(temp->next!=*ps)
 {
