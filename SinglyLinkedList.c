@@ -16,8 +16,7 @@ void main(){
 struct node * start=NULL;
 int noOfNodes;
 char c;
-int x;
-int ts,sr,toDelete;
+int x,ts,sr,toDelete;
 do{
 printf("Do you want to enter in Linked List:");
 scanf(" %c",&c);
