@@ -18,6 +18,10 @@ append(&start,50);
 
 display(start);
 
+del_first(&start);
+printf("\nDisplaying after deleting first node\n");
+display(start);
+
 }
 
 void append(struct Doubley **ps,int x){
@@ -49,4 +53,28 @@ while(p!=NULL){
     printf("%d ",p->data);
     p=p->next;
 }
+}
+
+
+
+void del_first(struct Doubley **ps){
+struct doubley *temp;
+if(*ps==NULL)
+{
+    printf("List Empty");
+    return;
+}
+if((*ps)->next==NULL)
+{
+    free(*ps);
+    *ps=NULL;
+    return;
+}
+
+temp=*ps;
+*ps=(*ps)->next;
+free(temp);
+(*ps)->prev==NULL;
+
+
 }

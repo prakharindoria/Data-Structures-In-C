@@ -24,12 +24,8 @@ void main(){
         if(x!=-1)
             printf("\n Removed= %d  ",x);
         }
-
-
-
-
-
 }
+
 void insert(struct Queue *q,int x){
 if(q->front==7)
     {printf("Queue Overflow");return;}
