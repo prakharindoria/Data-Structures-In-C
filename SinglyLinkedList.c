@@ -5,12 +5,15 @@ int data;
 struct node *next;
 };
 
+
+{//Declarations:
 void append(struct node**,int);
 int display(struct node*);
 int countnodes(struct node*);
 int search(struct node*,int);
 void del_last(struct node **);
-void del_node(struct node **,int);
+void del_node(struct node **,int);}
+
 
 void main(){
 struct node * start=NULL;
@@ -27,28 +30,32 @@ scanf("%d",&x);
 append(&start,x);
 printf("%d inserted\n");
 }while(c=='y');
+
+{//Show LL Elements
 printf("\nYour List: ");
 display(start);
 noOfNodes=countnodes(start);
 printf("\nNumber Of Nodes: %d",noOfNodes);
+}
 
+{//Searching specific node.
 printf("\nSearch Your Node: ");
 scanf("%d",&ts);
 sr=search(start,ts);
-printf("Your Number is at Position : %d",sr);
+printf("Your Number is at Position : %d",sr);}
+
+{//Deleting Element from the last
 del_last(&start);
 printf("\nDeleting The Last Node,New List Is: ");
-display(start);
+display(start);}
 
+{//Deleting a specific element by asking for its value from user.
 printf("\nEnter node to delete: ");
 scanf("%d",&toDelete);
 del_node(&start,toDelete);
 printf("\nDeleting %d Now New List Is: ",toDelete);
 display(start);
-
-
-
-getch();
+getch();}
 }
 
 
@@ -91,6 +98,7 @@ return -1;
 
 }
 
+
 void del_last(struct node **ps){
 struct node *prev,*temp;
 if(*ps==NULL)
@@ -132,7 +140,6 @@ while(p!=NULL){
 }
 
 
-
 int countnodes(struct node *p){
 int res=0;
 while(p!=NULL){
@@ -144,10 +151,7 @@ return res;
 }
 
 
-
-
-void del_node(struct node **ps,int x )
-{
+void del_node(struct node **ps,int x ){
     struct node *temp,*prev;
     if(*ps==NULL){
         printf("List Empty");return;
@@ -155,7 +159,7 @@ void del_node(struct node **ps,int x )
     temp=*ps;
     if((*ps)->data==x){
         free(ps);
-        printf("Node at found at first position and deleted");
+        printf("Node found at first position and deleted");
         return;
     }
 

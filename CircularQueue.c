@@ -1,6 +1,6 @@
 //Circular Queue
 struct Queue{
-int arr[7];
+int arr[5];
 int rear,front;
 };
 
@@ -14,25 +14,21 @@ void main(){
     q.front=0;
     q.rear=-1;
 
-    for(int i=0;i<4;i++){
+    for(int i=0;i<5;i++){
         printf("Enter element:");
         scanf("%d",&x);
         insert(&q,x);
         }
 
-    for(int i=0;i<4;i++){
+    for(int i=0;i<5;i++){
         x=remove(&q);
-        if(x!=-1)
+        if(x!=-1000)//this will provide inconsistent result for the value x=-1000
             printf("\n Removed= %d  ",x);
         }
 
-
-
-
-
 }
 void insert(struct Queue *q,int x){
-if(((q->rear+1)%5==q->front))//||(q->rear==4 && q->front==0))
+if(q->rear==4 && q->front==0)//(((q->rear+1)%5==q->front))
     printf("Queue Overflow");
 
 
