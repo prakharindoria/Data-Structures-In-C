@@ -6,13 +6,13 @@ struct node *next;
 };
 
 
-{//Declarations:
+//Declarations:
 void append(struct node**,int);
 int display(struct node*);
 int countnodes(struct node*);
 int search(struct node*,int);
 void del_last(struct node **);
-void del_node(struct node **,int);}
+void del_node(struct node **,int);
 
 
 void main(){
@@ -176,12 +176,4 @@ void del_node(struct node **ps,int x ){
         free(temp);
         printf("Node Deleted");
     }
-
-
-
-
-
-
-
-
 }

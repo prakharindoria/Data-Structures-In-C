@@ -10,8 +10,8 @@ void main(){
 
     int i,x;
     struct Queue q;
-    q.front=0;
-    q.rear=-1;
+    q.front=0;//We delete from  front
+    q.rear=-1;// We delete from rear
 
     for(int i=0;i<7;i++){
         printf("Enter element:");
