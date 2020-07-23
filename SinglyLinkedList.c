@@ -13,13 +13,12 @@ int countnodes(struct node*);
 int search(struct node*,int);
 void del_last(struct node **);
 void del_node(struct node **,int);
-
+//whenever changes are needed in the LL ,doubley pointers ares used // For just traversing singley pointer is used
 
 void main(){
-struct node * start=NULL;
-int noOfNodes;
-char c;
-int x,ts,sr,toDelete;
+struct node *start=NULL;//external pointer start
+char c;//c for choice
+int noOfNodes,x,ts,sr,toDelete;//x for data from user //ts is toSearch //sr is searchedIndex
 do{
 printf("Do you want to enter in Linked List:");
 scanf(" %c",&c);
@@ -60,6 +59,8 @@ getch();}
 
 
 void append(struct node **ps,int x){
+//One of the primary reason we use doubley pointer is that we have make changes in the start pointer too(which is an external pointer)...
+//for instance we have to insert in first node,then we have change NULL that is kept in start pointer.( start==NULL in the main)
 struct node *p,*temp;
 p=(struct node *)malloc(sizeof(struct node));
 p->data=x;
@@ -90,8 +91,6 @@ while(p!=NULL){
         else
         {p=p->next;
         res=res+1;}
-
-
 }
 return -1;
 
@@ -100,6 +99,8 @@ return -1;
 
 
 void del_last(struct node **ps){
+//We used doubley pointer because the last node we are deleting can also be the only node in LL.
+//In that case we have to make changes in the start pointer. Hence Doubley.
 struct node *prev,*temp;
 if(*ps==NULL)
 {printf("List Empty");return;}
@@ -107,7 +108,6 @@ if((*ps)->next==NULL){
     free(*ps);
     *ps=NULL;
     return;
-
 }
 temp=*ps;
 while(temp->next!=NULL)

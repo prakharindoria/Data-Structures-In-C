@@ -12,17 +12,9 @@ void display(struct cnode *);
 void main()
 {
     struct cnode *start=NULL;int choice;
+    int i=1;
     printf("Circular Linked List : ");
-    append(&start,10);
-    append(&start,20);
-    append(&start,30);
-    append(&start,40);
-    append(&start,50);
-    append(&start,60);
-    append(&start,70);
-    append(&start,80);
-    append(&start,90);
-    append(&start,100);
+    while(i<=10){append(&start,10*i);i++;}
     display(start);
     del_first(&start);
     printf("\n\nAfter deletion first node : ");

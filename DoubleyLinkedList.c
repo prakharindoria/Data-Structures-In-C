@@ -12,13 +12,9 @@ void del_first(struct Doubley **);
 void del_last(struct Doubley **);
 void del_node(struct Doubley **,int);
 main(){
-    int toDelete;
+    int toDelete;int i=1;
 struct Doubley *start=NULL;
-append(&start,10);
-append(&start,20);
-append(&start,30);
-append(&start,40);
-append(&start,50);
+ while(i<=10){append(&start,10*i);i++;}
 
 display(start);
 //Delete first node

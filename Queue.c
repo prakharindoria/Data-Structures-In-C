@@ -5,6 +5,7 @@ int rear,front;
 
 void insert(struct Queue *,int);
 int delete(struct Queue *);
+void show(struct Queue);
 
 void main(){
 
@@ -18,6 +19,9 @@ void main(){
         scanf("%d",&x);
         insert(&q,x);
         }
+        printf("\nShowing Queue: \n");
+        show(q);
+        printf("\n");
 
     for(int i=0;i<7;i++){
         x=remove(&q);
@@ -45,6 +49,47 @@ q->front=q->front+1;
 return x;
 
 }
+
+void show(struct Queue u){
+int i=0;
+for(i=0;i<7;i++){
+    printf("%d ",u.arr[i]);
+
+
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
