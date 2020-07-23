@@ -1,6 +1,9 @@
 # Prerequisites
 *.d
 
+#Bad Programming Stack
+stack.c
+
 # Object files
 *.o
 *.ko
