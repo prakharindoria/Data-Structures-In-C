@@ -22,7 +22,7 @@ void main(){
 
     for(int i=0;i<5;i++){
         x=remove(&q);
-        if(x!=-1000)//this will provide inconsistent result for the value x=-1000
+        if(x!=-1)//this will provide inconsistent result for the value x=-1
             printf("\n Removed= %d  ",x);
         }
 
@@ -48,7 +48,7 @@ q->front=0;return;
 int remove(struct Queue *q){
 int x;
 if(q->front==-1)
-{printf("Queue Underflow");return;}
+{printf("Queue Underflow");return -1;}
 
 x=q->arr[q->front];
 

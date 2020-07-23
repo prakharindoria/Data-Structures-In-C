@@ -7,6 +7,8 @@ int arr[5];
 
 void push(struct stack *,int );
 int pop(struct stack *);
+void show(struct stack);
+
 main(){
 int i,x,y;
 struct stack s;
@@ -18,14 +20,15 @@ do{//Used do while to take output from the first line itself.
     push(&s,x);
     i=i+1;
 }while(i<5);
-
+printf("Showing Stack :\n");
+show(s);//No need for address as we are not changing any value.
 printf("\nNow Popping\n\n");
 for(i=0;i<5;i++){
     y=pop(&s);
     if(y != -1)
         printf("Popped %d \n",y);
-
 }
+
 }
 
 void push(struct stack *p,int x){
@@ -44,4 +47,13 @@ res=q->arr[q->tos];
 q->tos=q->tos-1;
 return res;
 
+}
+
+
+
+void show(struct stack p){
+    int i=0;
+for(i=4;i>=0;i--){
+    printf("%d \n",p.arr[i]);
+}
 }

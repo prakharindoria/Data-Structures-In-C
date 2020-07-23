@@ -11,7 +11,7 @@ void main(){
     int i,x;
     struct Queue q;
     q.front=0;//We delete from  front
-    q.rear=-1;// We delete from rear
+    q.rear=-1;// We insert at rear
 
     for(int i=0;i<7;i++){
         printf("Enter element:");
@@ -29,7 +29,7 @@ void main(){
 void insert(struct Queue *q,int x){
 if(q->front==7)
     {printf("Queue Overflow");return;}
-    q->rear=q->rear+1;
+    q->rear=q->rear+1;// or (*q).rear=((*q).rear)+1
 q->arr[q->rear]=x;
 printf("Rec Inserted %d \n",x);
 }
