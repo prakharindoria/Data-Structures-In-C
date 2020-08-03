@@ -11,6 +11,7 @@ void display(struct Doubley *);
 void del_first(struct Doubley **);
 void del_last(struct Doubley **);
 void del_node(struct Doubley **,int);
+
 main(){
     int toDelete;int i=1;
 struct Doubley *start=NULL;

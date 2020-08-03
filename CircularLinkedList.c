@@ -9,8 +9,7 @@ struct cnode *next;
 void append(struct cnode **,int);
 void display(struct cnode *);
 
-void main()
-{
+void main(){
     struct cnode *start=NULL;int choice;
     int i=1;
     printf("Circular Linked List : ");
