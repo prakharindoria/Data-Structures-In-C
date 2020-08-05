@@ -1,6 +1,6 @@
 //Tree Taversals
 //1.Inorder 2.Preorder #.Postorder
-#include <conio.h>
+#include<conio.h>
 #include <stdio.h>
 
 struct bst{
@@ -12,7 +12,6 @@ struct bst *right;
 struct stack{
 struct bst* arr[10];
 int tos;
-
 };
 
 
@@ -20,6 +19,8 @@ void append(struct bst **,int );
 void push(struct stack *,struct bst *);
 struct bst* pop(struct stack*);
 void preorder(struct bst *);
+
+
 
 main(){
 struct bst *root=NULL;
@@ -34,13 +35,9 @@ do{
     fflush(stdin);
     append(&root,n);
 }while(1);
-
-
-
-
+printf("Preorder Traversal:");
+preorder(root);
 }
-
-
 
 void append(struct bst **pr,int x){
 struct bst *p,*temp,*prev;
@@ -67,5 +64,56 @@ else
     prev->right=p;
 
 }
+
+
+void push(struct stack *s,struct bst *right){
+    if(s->tos==9)
+        {printf("stack overflow");return;}
+    s->tos=s->tos+1;
+    s->arr[s->tos]=right;
+}
+
+
+struct bst* pop(struct stack *s){
+struct bst *res;
+if(s->tos==-1)
+{
+    printf("Stack UnderFlow");return NULL;
+}
+res=s->arr[s->tos];
+s->tos--;
+return res;
+}
+
+
+void preorder(struct bst *p){
+struct stack s;
+if(p==NULL){
+    printf("Tree Empty");return;
+}
+s.tos=-1;
+push(&s,p);
+while(s.tos!=-1){
+    p=pop(&s);
+    while(p!=NULL){
+        printf("%d ",p->data);
+        if(p->right!=NULL)
+            push(&s,p->right);
+        p=p->left;
+    }
+
+
+}
+
+
+}
+
+
+
+
+
+
+
+
 
 
