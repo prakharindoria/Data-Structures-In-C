@@ -1,5 +1,8 @@
 # Prerequisites
 *.d
+*.gitignore
+*.gitattributes
+
 
 #Bad Programming Stack
 stack.c
